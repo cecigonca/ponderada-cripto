@@ -50,7 +50,7 @@ def modelo_arima():
     return forecast
 
 # MODELO HOLT-WINTERS
-def holt_winters_model():
+def modelo_hwinters():
     model = ExponentialSmoothing(df_ethereum['close'], trend='add', seasonal='add', seasonal_periods=7)
     model_fit = model.fit()
     forecast = model_fit.forecast(steps=30)

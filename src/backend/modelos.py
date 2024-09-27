@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import logging
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import GRU, Dense
 from sklearn.preprocessing import MinMaxScaler
@@ -22,6 +23,7 @@ def create_sequences(data, window_size=60):
 
 # Função para rodar todos os modelos em sequência
 def executar_modelos():
+
     # MODELO GRU
     def modelo_gru():
         scaler = MinMaxScaler()
@@ -44,13 +46,16 @@ def executar_modelos():
         model.fit(X_train, y_train, epochs=10, batch_size=32)
         y_pred = model.predict(X_test)
 
-        return y_pred.flatten()[-7:]  # Retorna a previsão da última semana
+        logging.info(f"Previsão GRU: {y_pred.flatten()[-7:].tolist()}")
+        return y_pred.flatten()[-7:] 
 
     # MODELO ARIMA
     def modelo_arima():
         model = ARIMA(df_ethereum['close'], order=(5, 1, 2))
         model_fit = model.fit()
         forecast = model_fit.forecast(steps=30)
+        
+        logging.info(f"Previsão ARIMA: {forecast[-7:].tolist()}")
         return forecast[-7:]  # Retorna a previsão da última semana
 
     # MODELO HOLT-WINTERS
@@ -58,6 +63,8 @@ def executar_modelos():
         model = ExponentialSmoothing(df_ethereum['close'], trend='add', seasonal='add', seasonal_periods=7)
         model_fit = model.fit()
         forecast = model_fit.forecast(steps=30)
+        
+        logging.info(f"Previsão Holt-Winters: {forecast[-7:].tolist()}")
         return forecast[-7:]  # Retorna a previsão da última semana
 
     # MODELO RANDOM FOREST
@@ -76,6 +83,7 @@ def executar_modelos():
         y_pred = rf_model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
 
+        logging.info(f"Previsão Random Forest: {y_pred[-7:].tolist()}, Acurácia: {accuracy}")
         return {'accuracy': accuracy, 'predictions': y_pred[-7:]}  # Última semana de previsão
 
     # Rodar os modelos
@@ -94,6 +102,8 @@ def executar_modelos():
         recomendacao = "Semana boa para comprar!"
     else:
         recomendacao = "Não é uma boa semana para comprar."
+
+    logging.info(f"Recomendação final: {recomendacao}")
 
     # Retorna as previsões e a recomendação final
     return pred_gru, pred_arima, pred_hwinters, pred_rf, recomendacao

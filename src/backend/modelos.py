@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import logging
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import GRU, Dense
+from keras.models import Sequential
+from keras.layers import GRU, Dense
 from sklearn.preprocessing import MinMaxScaler
 from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.holtwinters import ExponentialSmoothing

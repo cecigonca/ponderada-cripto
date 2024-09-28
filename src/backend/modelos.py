@@ -9,9 +9,13 @@ from statsmodels.tsa.holtwinters import ExponentialSmoothing
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from sqlalchemy import create_engine
 
-# Carregar os dados para treinamento
-df_ethereum = pd.read_csv('./df_ethereum_processado.csv')
+# Conectar ao banco de dados PostgreSQL
+engine = create_engine('postgresql://cecigonca:cecilia2016@localhost:5432/cripto_db')
+
+# Carregar os dados diretamente da tabela 'dados_ethereum_processado'
+df_ethereum = pd.read_sql('SELECT * FROM public.dados_ethereum_processado', engine)
 
 # Função para criar sequências de dados para o modelo GRU
 def create_sequences(data, window_size=60):

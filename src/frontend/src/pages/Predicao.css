@@ -1,13 +1,115 @@
-/* src/pages/Predicao.css */
 .predicao-container {
-    padding: 20px;
     text-align: center;
-  }
-  
-  .predicao-content {
-    margin-top: 30px;
     padding: 20px;
-    background-color: #f0f0f0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #19183a;
+    color: #EBEBEB;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 400px;
+}
+
+.button:hover {
+    background-color: #6e6e8d;
+}
+
+.file-input-wrapper {
+    margin: 10px 0;
+    width: 400px; /* Ajustando para ter a mesma largura dos outros botões */
+}
+
+.file-input {
+    display: none;
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #19183a;
+    color: #EBEBEB;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90%; /* A largura será igual ao wrapper (400px) */
+    text-align: center;
+}
+
+.file-input-label:hover {
+    background-color: #6e6e8d;
+}
+
+.prediction-results {
+    margin-top: 60px;
+}
+
+/* Divisão da tabela e gráfico */
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 60px auto 0 auto;
+}
+
+/* Metade esquerda: Tabela */
+.table-section {
+    width: 45%;
+}
+
+/* Metade direita: Gráfico */
+.graph-section {
+    width: 45%;
+}
+
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+table, th, td {
     border: 1px solid #ddd;
-  }
-  
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #19183a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.recommendation {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 2px solid #19183a;
+    display: inline-block;
+}

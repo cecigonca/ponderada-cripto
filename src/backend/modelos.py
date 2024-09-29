@@ -10,6 +10,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sqlalchemy import create_engine
+import matplotlib.pyplot as plt
 
 # Conectar ao banco de dados PostgreSQL
 engine = create_engine('postgresql://cecigonca:cecilia2016@localhost:5432/cripto_db')
@@ -111,3 +112,4 @@ def executar_modelos():
 
     # Retorna as previsões e a recomendação final
     return pred_gru, pred_arima, pred_hwinters, pred_rf, recomendacao
+

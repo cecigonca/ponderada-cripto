@@ -3,6 +3,7 @@ import logging
 import uvicorn
 import os
 from modelos import executar_modelos  # Importando a função de modelos
+from fastapi.middleware.cors import CORSMiddleware
 
 LOG_DIR = "logs"
 if not os.path.exists(LOG_DIR):
@@ -18,6 +19,15 @@ logging.basicConfig(
 )
 
 app = FastAPI()
+
+# Configurar CORS para permitir chamadas do frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Pode restringir para seu frontend, se necessário
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():

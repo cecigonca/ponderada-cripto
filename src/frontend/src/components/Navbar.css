@@ -4,21 +4,19 @@
     display: flex;
     justify-content: center;
     padding: 30px; /* Aumente o padding para deixar mais espessa */
-    height: 60px; /* Adiciona uma altura fixa para a navbar */
 }
   
 .nav-button {
-    background-color: #ffffff;
+    background: #EBEBEB;
     color: #19183a;
-    margin: 0 10px;
+    margin: 0 30px;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    border-radius: 30px;
-    border: 0.943px solid #3E4851;
-    background: #EBEBEB;
-    }
-  
+    border-radius: 10px; 
+    border: 1px solid #3E4851;
+}
+
 .nav-button:hover {
-    background-color: #ccccff;
+    background-color: #6e6e8d;
 }

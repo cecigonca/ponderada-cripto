@@ -1,0 +1,13 @@
+/* src/pages/Predicao.css */
+.predicao-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .predicao-content {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+  }
+  

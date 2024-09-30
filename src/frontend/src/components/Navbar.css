@@ -3,7 +3,7 @@
     backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
-    padding: 30px; /* Aumente o padding para deixar mais espessa */
+    padding: 30px;
 }
   
 .nav-button {

@@ -2,14 +2,14 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 import logging
 import uvicorn
 import os
-from modelos import executar_modelos  # Importando a função de modelos
+import shutil
+import pandas as pd
+from src.backend.modelos import executar_modelos, processar_csv 
 from fastapi.middleware.cors import CORSMiddleware
 
 LOG_DIR = "logs"
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
-
-# Configura o logging para salvar em arquivo
 LOG_FILE = os.path.join(LOG_DIR, "arquivo_logs")
 logging.basicConfig(
     filename=LOG_FILE,
@@ -20,34 +20,33 @@ logging.basicConfig(
 
 app = FastAPI()
 
-# Configurar CORS para permitir chamadas do frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Pode restringir para seu frontend, se necessário
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Onde salva arquivos para retreino
+UPLOAD_DIRECTORY = "uploaded_data"
+if not os.path.exists(UPLOAD_DIRECTORY):
+    os.makedirs(UPLOAD_DIRECTORY)
+
 @app.get("/")
 def root():
     return {"message": "API está funcionando"}
 
-@app.get("/hello")
-def principal():
-    logging.info("Rota /hello acessada")
-    return {"message": "Hello, World!"}
-
 @app.post("/inserirBase")
 async def inserir_base(file: UploadFile = File(...)):
     try:
-        file_location = UPLOAD_DIRECTORY / file.filename
-        # Salvando o arquivo na pasta especificada
+        file_location = os.path.join(UPLOAD_DIRECTORY, file.filename)
         with open(file_location, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
-
         logging.info(f"Arquivo '{file.filename}' salvo em {file_location}")
-        return {"info": f"Arquivo '{file.filename}' salvo com sucesso em {file_location}"}
+        df_anexado = pd.read_csv(file_location)  
+        processar_csv(df_anexado) 
+        return {"info": f"Arquivo '{file.filename}' salvo e processado com sucesso."}
     except Exception as e:
         logging.error(f"Erro ao salvar o arquivo '{file.filename}': {str(e)}")
         raise HTTPException(status_code=500, detail=f"Erro ao salvar o arquivo: {str(e)}")
@@ -56,11 +55,7 @@ async def inserir_base(file: UploadFile = File(...)):
 def executar_todos_modelos():
     try:
         logging.info("Executando todos os modelos.")
-        
-        # Chamar a função que executa os modelos e capturar as previsões
         pred_gru, pred_arima, pred_hwinters, pred_rf, recomendacao = executar_modelos()  
-        
-        # Retornar os resultados dos modelos e a recomendação final
         return {
             "status": "Modelos executados com sucesso!",
             "previsoes": {

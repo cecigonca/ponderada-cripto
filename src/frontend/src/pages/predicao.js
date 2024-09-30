@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import './Predicao.css';  // Certifique-se de ajustar o CSS para o layout
+import './Predicao.css';
 
 function Predicao() {
   const [previsoes, setPrevisoes] = useState(null);
@@ -8,7 +8,6 @@ function Predicao() {
   const [error, setError] = useState(null);
   const [file, setFile] = useState(null);
 
-  // Função para executar a chamada à API e obter previsões
   const handlePrediction = async () => {
     setLoading(true);
     setError(null);
@@ -17,13 +16,12 @@ function Predicao() {
       const data = await response.json();
       setPrevisoes(data);
     } catch (err) {
-      setError('Erro ao executar os modelos. Tente novamente.');
+      setError('Erro ao executar os modelos.');
     } finally {
       setLoading(false);
     }
   };
 
-  // Função para carregar um novo dataset e executar o retrain
   const handleUpload = async () => {
     if (!file) {
       setError('Nenhum arquivo selecionado');
@@ -39,7 +37,7 @@ function Predicao() {
       });
       const data = await response.json();
       alert(data.info);
-      handlePrediction();  // Executar os modelos após o upload bem-sucedido
+      handlePrediction();
     } catch (err) {
       setError('Erro ao carregar o arquivo.');
     }
@@ -48,16 +46,14 @@ function Predicao() {
   return (
     <div className="predicao-container">
       <Navbar />
-      <h1>Predição dos Preços do Ethereum</h1>
-
+      <h1>Predição dos Preços</h1>
       <div className="button-container">
         <button onClick={handlePrediction} className="button">
-          Predição Ethereum
+          Predizer Ethereum
         </button>
-
         <div className="file-input-wrapper">
           <label htmlFor="file-upload" className="file-input-label">
-            Subir Nova Base de Dados
+            Selecionar Nova Base de Dados (.csv)
           </label>
           <input
             id="file-upload"
@@ -66,8 +62,6 @@ function Predicao() {
             onChange={(e) => setFile(e.target.files[0])}
           />
         </div>
-        
-
         <button onClick={handleUpload} className="button">
           Subir Nova Base de Dados e Retreinar
         </button>
@@ -108,11 +102,6 @@ function Predicao() {
                   </tr>
                 </tbody>
               </table>
-            </div>
-
-            <div className="graph-section">
-              <h2>Gráfico de Previsão</h2>
-              <img src="/graph_output.png" alt="Gráfico de Previsões" />
             </div>
           </div>
         </div>

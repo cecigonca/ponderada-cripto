@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       <Navbar /> 
-      <h1>Gráficos para Análise dos Últimos Dias</h1>
+      <h1>Gráficos para Análise do Último Ano</h1>
       <div className="graphs-container">
         <div className="graph">
           <img src="/grafico1.png" alt="Gráfico 1" />

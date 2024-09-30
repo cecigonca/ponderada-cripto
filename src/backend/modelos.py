@@ -12,13 +12,12 @@ from sklearn.metrics import accuracy_score
 from sqlalchemy import create_engine
 import matplotlib.pyplot as plt
 
-# Conectar ao banco de dados PostgreSQL
 engine = create_engine('postgresql://cecigonca:cecilia2016@localhost:5432/cripto_db')
 
-# Carregar os dados diretamente da tabela 'dados_ethereum_processado'
+# Puxa dados do banco de dados
 df_ethereum = pd.read_sql('SELECT * FROM public.dados_ethereum_processado', engine)
 
-# Função para criar sequências de dados para o modelo GRU
+# Preparo GRU
 def create_sequences(data, window_size=60):
     X, y = [], []
     for i in range(window_size, len(data)):
@@ -26,19 +25,17 @@ def create_sequences(data, window_size=60):
         y.append(data[i])
     return np.array(X), np.array(y)
 
-# Função para rodar todos os modelos em sequência
+# Executando os modelos em sequência
 def executar_modelos():
 
     # MODELO GRU
     def modelo_gru():
         scaler = MinMaxScaler()
         df_ethereum['close'] = scaler.fit_transform(df_ethereum[['close']])
-        
         X, y = create_sequences(df_ethereum['close'].values, 60)
         X_train, X_test = X[:int(0.8 * len(X))], X[int(0.8 * len(X)):]
         y_train, y_test = y[:int(0.8 * len(y))], y[int(0.8 * len(y)):]
         
-        # Reshape necessário para entrada no modelo GRU
         X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
         X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
 
@@ -52,7 +49,7 @@ def executar_modelos():
         y_pred = model.predict(X_test)
 
         logging.info(f"Previsão GRU: {y_pred.flatten()[-7:].tolist()}")
-        return y_pred.flatten()[-7:] 
+        return y_pred.flatten()[-7:] # uma semana
 
     # MODELO ARIMA
     def modelo_arima():
@@ -61,7 +58,7 @@ def executar_modelos():
         forecast = model_fit.forecast(steps=30)
         
         logging.info(f"Previsão ARIMA: {forecast[-7:].tolist()}")
-        return forecast[-7:]  # Retorna a previsão da última semana
+        return forecast[-7:]  
 
     # MODELO HOLT-WINTERS
     def modelo_hwinters():
@@ -70,12 +67,11 @@ def executar_modelos():
         forecast = model_fit.forecast(steps=30)
         
         logging.info(f"Previsão Holt-Winters: {forecast[-7:].tolist()}")
-        return forecast[-7:]  # Retorna a previsão da última semana
+        return forecast[-7:] 
 
     # MODELO RANDOM FOREST
     def modelo_random_forest():
         df_ethereum['price_direction'] = np.where(df_ethereum['close'].shift(-1) > df_ethereum['close'], 1, 0)
-
         features = ['golden_cross', 'death_cross', 'volume', 'volatility']
         X = df_ethereum[features]
         y = df_ethereum['price_direction']
@@ -89,27 +85,32 @@ def executar_modelos():
         accuracy = accuracy_score(y_test, y_pred)
 
         logging.info(f"Previsão Random Forest: {y_pred[-7:].tolist()}, Acurácia: {accuracy}")
-        return {'accuracy': accuracy, 'predictions': y_pred[-7:]}  # Última semana de previsão
+        return {'accuracy': accuracy, 'predictions': y_pred[-7:]}  
 
-    # Rodar os modelos
+    # Roda os modelos
     pred_gru = modelo_gru()
     pred_arima = modelo_arima()
     pred_hwinters = modelo_hwinters()
     rf_result = modelo_random_forest()
     pred_rf = rf_result['predictions']
 
-    # Decisão de compra com base nas previsões
+    # Lógica para recomendação
     total_up_signals = np.mean([np.mean(pred_gru), np.mean(pred_arima), np.mean(pred_hwinters)]) > 0
-    rf_up_signals = np.sum(pred_rf == 1) > 3  # Se mais da metade da semana tem previsão de alta no Random Forest
-
-    # Avaliação final
+    rf_up_signals = np.sum(pred_rf == 1) > 3 
     if total_up_signals and rf_up_signals:
         recomendacao = "Semana boa para comprar!"
     else:
-        recomendacao = "Não é uma boa semana para comprar."
-
+        recomendacao = "Melhor não arriscar..."
     logging.info(f"Recomendação final: {recomendacao}")
 
-    # Retorna as previsões e a recomendação final
     return pred_gru, pred_arima, pred_hwinters, pred_rf, recomendacao
 
+# Acessa novo csv anexado
+def processar_csv(df_anexado):
+    colunas_esperadas = ['timestamp', 'open', 'high', 'low', 'close', 'volume']
+    for coluna in colunas_esperadas:
+        if coluna not in df_anexado.columns:
+            raise ValueError(f"Coluna {coluna} faltando no arquivo CSV enviado.")
+    global df_ethereum 
+    df_ethereum = pd.concat([df_ethereum, df_anexado], ignore_index=True)
+    logging.info("Base de dados atualizada com novos dados do CSV.")

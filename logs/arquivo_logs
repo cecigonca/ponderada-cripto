@@ -1,0 +1,120 @@
+2024-09-29 20:23:48 - INFO - Rota /hello acessada
+2024-09-29 20:32:16 - INFO - Executando todos os modelos.
+2024-09-29 20:32:35 - INFO - Previsão GRU: [0.4023354947566986, 0.41620346903800964, 0.4300748109817505, 0.44162535667419434, 0.4450504183769226, 0.4484955370426178, 0.45554885268211365]
+2024-09-29 20:32:38 - INFO - Previsão ARIMA: [0.4545680178223357, 0.45456802509216565, 0.45456802957108744, 0.45456803233007154, 0.45456803402989304, 0.4545680350770368, 0.454568035722142]
+2024-09-29 20:32:38 - INFO - Previsão Holt-Winters: [0.47629295009160677, 0.48218872307983646, 0.48340336756851665, 0.4794108885007832, 0.48116673664726173, 0.4846034472665406, 0.4962667093885189]
+2024-09-29 20:32:38 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 20:32:38 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 20:35:10 - INFO - Executando todos os modelos.
+2024-09-29 20:35:29 - INFO - Previsão GRU: [0.4019833505153656, 0.4158713221549988, 0.4301823675632477, 0.4418098032474518, 0.4438759684562683, 0.4471249282360077, 0.455102801322937]
+2024-09-29 20:35:30 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 20:35:31 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 20:35:31 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 20:35:31 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 20:37:56 - INFO - Executando todos os modelos.
+2024-09-29 20:38:04 - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000021467153920> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2024-09-29 20:38:04 - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000021467153920> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2024-09-29 20:38:04 - INFO - Previsão GRU: [0.40047013759613037, 0.4146636724472046, 0.42878592014312744, 0.4405280649662018, 0.44386470317840576, 0.4472934305667877, 0.4545983672142029]
+2024-09-29 20:38:09 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 20:38:09 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 20:38:09 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 20:38:09 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 20:47:32 - INFO - Executando todos os modelos.
+2024-09-29 20:47:47 - INFO - Previsão GRU: [0.41023123264312744, 0.42441052198410034, 0.4384889304637909, 0.4499697685241699, 0.4523898959159851, 0.4553203284740448, 0.46268877387046814]
+2024-09-29 20:47:49 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 20:47:49 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 20:47:50 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 20:47:50 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 20:50:17 - INFO - Rota /hello acessada
+2024-09-29 20:50:24 - INFO - Executando todos os modelos.
+2024-09-29 20:50:38 - INFO - Previsão GRU: [0.4021626114845276, 0.41619494557380676, 0.4302465319633484, 0.4415741562843323, 0.4432666599750519, 0.44597920775413513, 0.4536727964878082]
+2024-09-29 20:50:41 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 20:50:42 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 20:50:42 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 20:50:42 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 20:50:56 - INFO - Executando todos os modelos.
+2024-09-29 20:51:13 - INFO - Previsão GRU: [0.4034029245376587, 0.41796761751174927, 0.432267963886261, 0.44382190704345703, 0.44596779346466064, 0.44861558079719543, 0.45594772696495056]
+2024-09-29 20:51:14 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 20:51:14 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 20:51:15 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 20:51:15 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 20:54:55 - INFO - Executando todos os modelos.
+2024-09-29 20:55:12 - INFO - Previsão GRU: [0.4049083888530731, 0.4201827049255371, 0.434975266456604, 0.4470973610877991, 0.4502001404762268, 0.4531935751438141, 0.4604242742061615]
+2024-09-29 20:55:14 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 20:55:15 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 20:55:15 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 20:55:15 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 21:03:37 - INFO - Executando todos os modelos.
+2024-09-29 21:03:58 - INFO - Previsão GRU: [0.40137866139411926, 0.4145779609680176, 0.4283841848373413, 0.4395192265510559, 0.44092652201652527, 0.4439809024333954, 0.4520778954029083]
+2024-09-29 21:04:03 - INFO - Previsão ARIMA: [0.4545680178223357, 0.45456802509216565, 0.45456802957108744, 0.45456803233007154, 0.45456803402989304, 0.4545680350770368, 0.454568035722142]
+2024-09-29 21:04:03 - INFO - Previsão Holt-Winters: [0.47629295009160677, 0.48218872307983646, 0.48340336756851665, 0.4794108885007832, 0.48116673664726173, 0.4846034472665406, 0.4962667093885189]
+2024-09-29 21:04:03 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 21:04:03 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 21:04:04 - INFO - Salvando gráfico no caminho: C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:04:04 - INFO - Gráfico salvo com sucesso em C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:04:16 - INFO - Executando todos os modelos.
+2024-09-29 21:04:36 - INFO - Previsão GRU: [0.40125343203544617, 0.41500258445739746, 0.42925339937210083, 0.44080761075019836, 0.4426248073577881, 0.4458349645137787, 0.45397430658340454]
+2024-09-29 21:04:41 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 21:04:41 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 21:04:41 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 21:04:41 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 21:04:42 - INFO - Salvando gráfico no caminho: C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:04:42 - INFO - Gráfico salvo com sucesso em C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:04:48 - INFO - Executando todos os modelos.
+2024-09-29 21:05:05 - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000174DCAD9EE0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2024-09-29 21:05:06 - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000174DCAD9EE0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2024-09-29 21:05:06 - INFO - Previsão GRU: [0.4095595180988312, 0.42372044920921326, 0.43816670775413513, 0.4498463273048401, 0.4518051743507385, 0.45486557483673096, 0.4627576470375061]
+2024-09-29 21:05:09 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 21:05:10 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 21:05:10 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 21:05:10 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 21:05:10 - INFO - Salvando gráfico no caminho: C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:05:11 - INFO - Gráfico salvo com sucesso em C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:05:32 - INFO - Executando todos os modelos.
+2024-09-29 21:05:51 - INFO - Previsão GRU: [0.4141312837600708, 0.42851385474205017, 0.4424557685852051, 0.4540298283100128, 0.4577639102935791, 0.4608849883079529, 0.46729710698127747]
+2024-09-29 21:05:55 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 21:05:56 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 21:05:56 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 21:05:56 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 21:05:56 - INFO - Salvando gráfico no caminho: C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:05:57 - INFO - Gráfico salvo com sucesso em C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:10:04 - INFO - Executando todos os modelos.
+2024-09-29 21:10:14 - INFO - Previsão GRU: [0.40479448437690735, 0.41834723949432373, 0.4319927990436554, 0.44326066970825195, 0.446124404668808, 0.44937410950660706, 0.45655497908592224]
+2024-09-29 21:10:16 - INFO - Previsão ARIMA: [0.4545680178223357, 0.45456802509216565, 0.45456802957108744, 0.45456803233007154, 0.45456803402989304, 0.4545680350770368, 0.454568035722142]
+2024-09-29 21:10:16 - INFO - Previsão Holt-Winters: [0.47629295009160677, 0.48218872307983646, 0.48340336756851665, 0.4794108885007832, 0.48116673664726173, 0.4846034472665406, 0.4962667093885189]
+2024-09-29 21:10:16 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 21:10:16 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 21:10:17 - INFO - Salvando gráfico no caminho: C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:10:17 - INFO - Gráfico salvo com sucesso em C:\Users\cecig\OneDrive\Documentos\GitHub\ponderada-cripto\src\frontend\public\graph_output.png
+2024-09-29 21:56:12 - INFO - Executando todos os modelos.
+2024-09-29 21:56:32 - INFO - Previsão GRU: [0.3994619846343994, 0.4135136306285858, 0.42765694856643677, 0.4394066631793976, 0.44280725717544556, 0.44630149006843567, 0.4534682333469391]
+2024-09-29 21:56:35 - INFO - Previsão ARIMA: [0.4545680178223357, 0.45456802509216565, 0.45456802957108744, 0.45456803233007154, 0.45456803402989304, 0.4545680350770368, 0.454568035722142]
+2024-09-29 21:56:35 - INFO - Previsão Holt-Winters: [0.47629295009160677, 0.48218872307983646, 0.48340336756851665, 0.4794108885007832, 0.48116673664726173, 0.4846034472665406, 0.4962667093885189]
+2024-09-29 21:56:36 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 21:56:36 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 21:56:54 - INFO - Executando todos os modelos.
+2024-09-29 21:57:08 - INFO - Previsão GRU: [0.407977432012558, 0.4221929609775543, 0.4362146556377411, 0.44768026471138, 0.4502115845680237, 0.45312193036079407, 0.4604209065437317]
+2024-09-29 21:57:10 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 21:57:10 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 21:57:10 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 21:57:10 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 22:04:09 - INFO - Executando todos os modelos.
+2024-09-29 22:04:29 - INFO - Previsão GRU: [0.4080703556537628, 0.42172256112098694, 0.43532097339630127, 0.44654926657676697, 0.4494135081768036, 0.4525461196899414, 0.4596388339996338]
+2024-09-29 22:04:33 - INFO - Previsão ARIMA: [0.4545680178223357, 0.45456802509216565, 0.45456802957108744, 0.45456803233007154, 0.45456803402989304, 0.4545680350770368, 0.454568035722142]
+2024-09-29 22:04:33 - INFO - Previsão Holt-Winters: [0.47629295009160677, 0.48218872307983646, 0.48340336756851665, 0.4794108885007832, 0.48116673664726173, 0.4846034472665406, 0.4962667093885189]
+2024-09-29 22:04:33 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 22:04:33 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 22:05:35 - INFO - Executando todos os modelos.
+2024-09-29 22:05:48 - INFO - Previsão GRU: [0.41475099325180054, 0.42883631587028503, 0.4424320459365845, 0.45353323221206665, 0.4560122787952423, 0.4585927426815033, 0.4654540717601776]
+2024-09-29 22:05:53 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 22:05:53 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 22:05:54 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 22:05:54 - INFO - Recomendação final: Semana boa para comprar!
+2024-09-29 22:08:56 - INFO - Executando todos os modelos.
+2024-09-29 22:09:14 - WARNING - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000164A693F6A0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2024-09-29 22:09:15 - WARNING - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000164A693F6A0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2024-09-29 22:09:15 - INFO - Previsão GRU: [0.40937063097953796, 0.4237646460533142, 0.43793976306915283, 0.44982030987739563, 0.4537622332572937, 0.45730769634246826, 0.4642593562602997]
+2024-09-29 22:09:20 - INFO - Previsão ARIMA: [0.45456801782662354, 0.4545680250964536, 0.45456802957537545, 0.4545680323343596, 0.45456803403418117, 0.45456803508132493, 0.4545680357264301]
+2024-09-29 22:09:20 - INFO - Previsão Holt-Winters: [0.4762931718186141, 0.4821889735022444, 0.4834036261184018, 0.47941112269542535, 0.4811669638705524, 0.48460371177916045, 0.4962669871815134]
+2024-09-29 22:09:20 - INFO - Previsão Random Forest: [1, 1, 1, 1, 1, 1, 1], Acurácia: 0.5342465753424658
+2024-09-29 22:09:20 - INFO - Recomendação final: Semana boa para comprar!

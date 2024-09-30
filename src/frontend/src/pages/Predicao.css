@@ -1,6 +1,5 @@
 .predicao-container {
     text-align: center;
-    padding: 20px;
 }
 
 .button-container {
@@ -29,7 +28,7 @@
 
 .file-input-wrapper {
     margin: 10px 0;
-    width: 400px; /* Ajustando para ter a mesma largura dos outros botões */
+    width: 400px;
 }
 
 .file-input {
@@ -44,7 +43,7 @@
     color: #EBEBEB;
     border-radius: 5px;
     cursor: pointer;
-    width: 90%; /* A largura será igual ao wrapper (400px) */
+    width: 90%; 
     text-align: center;
 }
 
@@ -56,28 +55,9 @@
     margin-top: 60px;
 }
 
-/* Divisão da tabela e gráfico */
-.result-container {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: 60px auto 0 auto;
-}
-
-/* Metade esquerda: Tabela */
-.table-section {
-    width: 45%;
-}
-
-/* Metade direita: Gráfico */
-.graph-section {
-    width: 45%;
-}
-
-/* Estilo para a tabela */
 table {
-    width: 100%;
-    margin: 0 auto;
+    width: 90%;
+    margin: 40px auto 40px auto;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
 }

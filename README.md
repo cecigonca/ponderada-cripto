@@ -38,14 +38,12 @@ PONDERADA-CRIPTO/
 
 ## Requisitos
 
-Antes de rodar o projeto, certifique-se de ter as seguintes ferramentas instaladas:
+Antes de rodar o projeto, instale:
 
 - [Python 3.8+](https://www.python.org/downloads/)
 - [Node.js](https://nodejs.org/)
 - [Docker](https://www.docker.com/products/docker-desktop)
 - [Docker Compose](https://docs.docker.com/compose/install/)
-
-As dependências estão listadas no arquivo `requirements.txt` e podem ser instaladas com o comando: `pip install -r requirements.txt`
 
 ## Executar o Projeto (Docker)
 No terminal insira os seguintes comandos:
@@ -76,11 +74,14 @@ A escolha dos modelos GRU, ARIMA, Holt-Winters e Random Forest Classifier foi ba
 - **Random Forest Classifier**: Preve a direção dos preços (subida ou descida) com base em variáveis técnicas, robusto contra overfitting.
 
 ## Por que Data Lake não foi utilizado
-O Data Lake não foi utilizado nesta ponderda porque os dados eram estruturados e provenientes de uma única fonte, um banco de dados relacional PostgreSQL. Não houve necessidade de gerenciar grandes volumes de dados não estruturados ou semiestruturados, característica comum de soluções que utilizam Data Lake. A escolha pelo PostgreSQL, devido à sua simplicidade e eficiência, combinada com a arquitetura de microsserviços utilizando Docker, foi suficiente para atender às necessidades de processamento e armazenamento da aplicação.
+O Data Lake não foi utilizado nesta ponderda porque os dados eram estruturados e vieram de uma única fonte, de uma API que passou para um banco de dados relacional PostgreSQL. Não houve necessidade de gerenciar grandes volumes de dados não estruturados, característica comum de soluções que utilizam Data Lake. A escolha pelo PostgreSQL, por conta da simplicidade e eficiência, combinada com a arquitetura de microsserviços utilizando Docker, foi suficiente para atender às necessidades de processamento e armazenamento da aplicação.
 
 ## Explicação Microsserviço (Docker)
-O Docker foi utilizado para criar um ambiente padronizado e escalável, permitindo rodar o backend (FastAPI) e o frontend (React) de forma consistente em diferentes ambientes. O projeto foi dividido em dois microsserviços, cada um rodando em seu próprio container, com o Docker Compose gerenciando a comunicação entre eles.
+O Docker foi utilizado para criar um ambiente padronizado e escalável, permitindo rodar o backend (FastAPI) e o frontend (React) de forma consistente em diferentes ambientes. O projeto foi dividido em dois microsserviços (frontend e backend), cada um rodando em seu próprio container, com o 'docker-compose.yml' gerenciando a comunicação entre eles.
 
-Os Dockerfiles foram configurados para instalar dependências e garantir a compatibilidade entre backend e frontend. O backend se conecta a um banco de dados PostgreSQL para processar previsões, enquanto o frontend exibe os resultados. 
+Os Dockerfiles foram configurados para instalar dependências e garantir a compatibilidade entre backend e frontend. O backend se conecta a um banco de dados PostgreSQL para processar previsões, enquanto o frontend exibe os resultados. Essa abordagem Dockerizada trás vantagens como isolamento de componentes, escalabilidade, facilitando a manutenção da aplicação.
 
-A abordagem Dockerizada trouxe vantagens como isolamento de componentes, escalabilidade e portabilidade, facilitando o deploy e a manutenção do sistema.
+## Inteface Web
+
+![Dashboard](public/dashboard.png)
+![Predição](public/predicao.png)

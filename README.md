@@ -1,5 +1,5 @@
 # Ponderada Cripto
-Sistema de auxílio à tomada de decisões para investimento em cripto ativos
+Sistema de auxílio à tomada de decisões para investimento em cripto ativos.
 
 ## Funcionalidades
 - Previsão dos preços do Ethereum utilizando diferentes modelos (GRU, ARIMA, Holt-Winters, Random Forest).
@@ -56,6 +56,7 @@ Para rodar o backend, em um primeiro terminal execute:
 - `venv\Scripts\activate` (Windows)
 - `pip install -r requirements.txt`
 - `uvicorn src.backend.main:app --reload`
+
 Para rodar o frontend, no segundo terminal execute os seguintes comandos no diretório '/frontend'
 - `npm install`
 - `npm start`
